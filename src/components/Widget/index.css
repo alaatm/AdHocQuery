@@ -4,6 +4,7 @@
     border-bottom: 1px solid #c1d5e4;
     overflow-y: auto;
     background: #fff;
+    margin-top: 10px;
 }
 
 .aq-widget-header {
@@ -21,4 +22,5 @@
 
 .aq-widget-body {
     padding: 10px;
+    overflow-y: auto;
 }

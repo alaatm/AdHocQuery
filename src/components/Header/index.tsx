@@ -15,7 +15,7 @@ export class Header extends React.Component {
                     <Button type="primary" icon="save">Save</Button>
                     &nbsp;&nbsp;
                     <Tooltip placement="top" title="View video tutorial">
-                        <Button type="primary" shape="circle" icon="youtube" />
+                        <Button type="primary" icon="youtube" />
                     </Tooltip>
                 </div>
             </div>

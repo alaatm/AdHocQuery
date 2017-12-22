@@ -13,11 +13,11 @@ export class Widget extends React.Component<IProps, {}> {
 
     render() {
         return (
-            <div className={`aq-widget ${this.props.className}`}>
+            <div className="aq-widget">
                 <div className="aq-widget-header">
                     <span className="aq-widget-title">{this.props.title}</span>
                 </div>
-                <div className="aq-widget-body">
+                <div className={`aq-widget-body ${this.props.className}`}>
                     {this.props.children}
                 </div>
             </div>

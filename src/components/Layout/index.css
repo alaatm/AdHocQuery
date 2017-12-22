@@ -5,7 +5,7 @@
 }*/
 
 .container-fixed {
-    width: 1170px;
+    width: 1250px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -174,25 +174,20 @@
     padding-left: 0;
 }
 
+.aq-header {
+    margin-top: 10px;
+}
+
 .aq-avail-cols {
-    height: 640px;
+    height: 590px;
 }
 
 .aq-sel-cols,
 .aq-sor-cols,
 .aq-qry-filter {
-    height: 315px;
+    height: 265px;
 }
 
 .aq-results {
-    height: 228px;
-}
-
-.aq-header,
-.aq-avail-cols,
-.aq-sel-cols,
-.aq-sor-cols,
-.aq-qry-filter,
-.aq-results {
-    margin-top: 10px;
+    height: 178px;
 }
