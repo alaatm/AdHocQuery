@@ -1,0 +1,24 @@
+.aq-widget {
+    border-left: 1px solid #c1d5e4;
+    border-right: 1px solid #c1d5e4;
+    border-bottom: 1px solid #c1d5e4;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.aq-widget-header {
+    background: #f8f7f7;
+    border-top: 6px solid #1777b1;
+    border-bottom: 1px solid #1777b1;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.aq-widget-title {
+    color: #4f4f4f;
+    font-size: 14pt;
+}
+
+.aq-widget-body {
+    padding: 10px;
+}

@@ -20,20 +20,20 @@ export default class Layout extends React.Component {
 
                 <div className="row">
                     <div className="col-md-5">
-                        <div className="aq-avail-cols"><AvailableColumns /></div>
+                        <AvailableColumns />
                     </div>
                     <div className="col-md-19">
                         <div className="row">
-                            <div className="col-md-16">
-                                <div className="aq-sel-cols"><SelectedColumns /></div>
+                            <div className="col-md-16 no-pad">
+                                <SelectedColumns />
                             </div>
                             <div className="col-md-8">
-                                <div className="aq-sor-cols"><SortedColumns /></div>
+                                <SortedColumns />
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-24">
-                                <div className="aq-qry-filter"><QueryFilters /></div>
+                            <div className="col-md-24 no-left-pad">
+                                <QueryFilters />
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ export default class Layout extends React.Component {
 
                 <div className="row">
                     <div className="col-md-24">
-                        <div className="aq-results"><Results /></div>
+                        <Results />
                     </div>
                 </div>
             </div>);

@@ -1,8 +1,13 @@
 import * as React from 'react';
+import { Widget } from '../Widget/index';
 
 export class Results extends React.Component {
     render() {
-        return <p>Results</p>;
+        return (
+            <Widget title="Available Columns" className="aq-results">
+                <p>Results</p>
+            </Widget>
+        );
     }
 }
 

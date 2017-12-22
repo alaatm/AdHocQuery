@@ -165,6 +165,15 @@
     float: left;
 }
 
+.no-pad {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-left-pad {
+    padding-left: 0;
+}
+
 .aq-avail-cols {
     height: 640px;
 }
@@ -172,7 +181,11 @@
 .aq-sel-cols,
 .aq-sor-cols,
 .aq-qry-filter {
-    height: 303px;
+    height: 315px;
+}
+
+.aq-results {
+    height: 228px;
 }
 
 .aq-header,
@@ -181,13 +194,5 @@
 .aq-sor-cols,
 .aq-qry-filter,
 .aq-results {
-    margin-top: 26px;
-}
-
-.aq-qry-filter {
-    margin-right: 1px;
-}
-
-.aq-results {
-    margin-right: .2em;
+    margin-top: 10px;
 }
