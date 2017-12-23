@@ -39,6 +39,9 @@ export class EditableText extends React.Component<IProps, IState> {
 
     handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         this.setState({ value: e.target.value });
+        if (this.props.onChange) {
+            this.props.onChange(e.target.value);
+        }
     }
 
     handlePressEnter(e: React.FormEvent<{}>) {

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Widget } from '../Widget/index';
+import { Widget } from '../helpers';
 
 export class QueryFilters extends React.Component {
     render() {
         return (
-            <Widget title="Available Columns" className="aq-qry-filter">
+            <Widget title="Query Filters" className="aq-qry-filter">
                 <p>Query Filters</p>
             </Widget>
         );

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Widget } from '../Widget/index';
+import { Widget } from '../helpers';
 
 export class Results extends React.Component {
     render() {
         return (
-            <Widget title="Available Columns" className="aq-results">
+            <Widget title="Results" className="aq-results">
                 <p>Results</p>
             </Widget>
         );

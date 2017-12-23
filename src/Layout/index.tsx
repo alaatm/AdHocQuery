@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { Provider } from 'mobx-react';
-import { Header } from '../Header';
-import { AvailableColumns } from '../AvailableColumns';
-import { SelectedColumns } from '../SelectedColumns';
-import { SortedColumns } from '../SortedColumns';
-import { QueryFilters } from '../QueryFilters';
-import { Results } from '../Results';
+import { AvailableColumns, Header, QueryFilters, Results, SelectedColumns, SortedColumns } from '../components/core';
 
-import Store from '../../Store';
+import Store from '../Store';
 
 import './index.css';
 
