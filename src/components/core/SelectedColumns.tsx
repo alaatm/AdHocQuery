@@ -4,7 +4,7 @@ import Store from '../../Store';
 import { Table } from 'antd';
 import { ColumnProps } from 'antd/lib/table';
 import { EditableText, EditableTextDropdown, Widget } from '../helpers';
-import { IColumnDescriptor } from '../../interfaces';
+import { Column } from '../../Store/models';
 
 interface IProps {
     store?: Store;
@@ -13,26 +13,18 @@ interface IProps {
 @inject('store')
 @observer
 export class SelectedColumns extends React.Component<IProps, {}> {
-    handleTitleChange = (id: string) => {
-        return (value: string) => {
-            this.props.store!.updateTitleText(id, value);
-        };
-    }
-
-    handleSortChange = (id: string) => {
-        return (value: string) => {
-            this.props.store!.updateSorting(id, value);
-        };
-    }
-
     render() {
         const selectedColumns = this.props.store!.selectedColumns.slice();
+        // The below code is just there so that we can pick up mobx
+        // store changes on sorted columns :-/
+        const sortedColumns = this.props.store!.sortedColumns;
+        console.log(sortedColumns.length);
 
         return (
             <Widget title="Selected Columns" className="aq-sel-cols">
                 <Table
                     columns={this.getColumns()}
-                    rowKey={(record: IColumnDescriptor) => record.id}
+                    rowKey={(record: Column) => record.id}
                     dataSource={selectedColumns}
                     size="middle"
                     showHeader={selectedColumns.length ? true : false}
@@ -42,7 +34,7 @@ export class SelectedColumns extends React.Component<IProps, {}> {
         );
     }
 
-    private getColumns(): ColumnProps<IColumnDescriptor>[] {
+    private getColumns(): ColumnProps<Column>[] {
         return [{
             title: 'Expression',
             dataIndex: 'text',
@@ -51,14 +43,14 @@ export class SelectedColumns extends React.Component<IProps, {}> {
             title: 'Title',
             dataIndex: 'title',
             width: '40%',
-            render: (text, item) => <EditableText value={text} onChange={this.handleTitleChange(item.id)} />
+            render: (text, item) => <EditableText value={text} onChange={item.updateTitle} />
         }, {
             title: 'Sorting',
             dataIndex: 'sorting',
             render: (text, item) => (
                 <EditableTextDropdown
                     value={text || 'None'}
-                    onChange={this.handleSortChange(item.id)}
+                    onChange={item.updateSorting}
                     valueOptions={['Asc', 'Desc', 'None']}
                 />)
         }];

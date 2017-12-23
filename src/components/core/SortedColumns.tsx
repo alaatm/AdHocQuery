@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import Store from '../../Store';
-import { Table } from 'antd';
+import { Table, Icon } from 'antd';
 import { ColumnProps } from 'antd/lib/table';
 import { Widget } from '../helpers';
-import { IColumnDescriptor } from '../../interfaces';
+import { Column } from '../../Store/models';
 
 interface IProps {
     store?: Store;
@@ -20,7 +20,7 @@ export class SortedColumns extends React.Component<IProps, {}> {
             <Widget title="Sorted Columns" className="aq-sor-cols">
                 <Table
                     columns={this.getColumns()}
-                    rowKey={(record: IColumnDescriptor) => record.id}
+                    rowKey={(record: Column) => record.id}
                     dataSource={sortedColumns}
                     size="middle"
                     showHeader={sortedColumns.length ? true : false}
@@ -30,13 +30,20 @@ export class SortedColumns extends React.Component<IProps, {}> {
         );
     }
 
-    private getColumns(): ColumnProps<IColumnDescriptor>[] {
+    private getColumns(): ColumnProps<Column>[] {
         return [{
             title: 'Column',
             dataIndex: 'text',
         }, {
             title: 'Sorting',
             dataIndex: 'sorting',
+        }, {
+            title: '',
+            className: 'manage',
+            render: (_, item) => (
+                <a href="#" onClick={item.removeSorting}>
+                    <Icon type="delete" title="Delete" />
+                </a>)
         }];
     }
 }

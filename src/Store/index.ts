@@ -29,7 +29,7 @@ export default class Store {
             if (selectedKeys.indexOf(k) < 0) {
                 const column = availableColumns.filter(c => c.id === k)[0];
                 if (column) {
-                    const addedColumn = { ...column, title: column.text, sorting: 'None', order: 0 } as Column;
+                    let addedColumn = new Column(column);
                     self.selectedColumns.push(addedColumn);
                 }
             }
@@ -39,15 +39,5 @@ export default class Store {
         this.selectedColumns.forEach((c, i) => {
             c.order = i;
         });
-    }
-
-    @action
-    public updateTitleText(id: string, value: string) {
-        this.selectedColumns.filter(p => p.id === id)[0].title = value;
-    }
-
-    @action
-    public updateSorting(id: string, value: string) {
-        this.selectedColumns.filter(p => p.id === id)[0].sorting = value;
     }
 }
