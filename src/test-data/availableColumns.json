@@ -1,0 +1,601 @@
+[{
+    "id": "1",
+    "text": "Contract",
+    "dbTable": "",
+    "columns": [{
+        "id": "1.1",
+        "pid": "1",
+        "dbField": "contract_number",
+        "text": "Number",
+        "type": "array",
+        "systemType": "string",
+        "valueOptions": ["FA8505-10-D-0006", "FA8505-11-D-0001", "FA8505-12-D-0001", "FA8505-14-C-0003"]
+    }, {
+        "id": "1.2",
+        "pid": "1",
+        "dbField": "contract_clin",
+        "text": "CLIN",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }]
+}, {
+    "id": "2",
+    "text": "Repair Document",
+    "dbTable": "",
+    "columns": [{
+        "id": "2.1",
+        "pid": "2",
+        "dbField": "repair_document_dcn",
+        "text": "DCN",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "2.2",
+        "pid": "2",
+        "dbField": "repair_document_date",
+        "text": "Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "2.3",
+        "pid": "2",
+        "dbField": "repair_document_created_by",
+        "text": "Created By",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "2.4",
+        "pid": "2",
+        "dbField": "repair_document_micap",
+        "text": "MICAP",
+        "type": "bool",
+        "systemType": "bool",
+        "valueOptions": null
+    }, {
+        "id": "2.5",
+        "pid": "2",
+        "dbField": "repair_document_micap_date",
+        "text": "MICAP Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "2.6",
+        "pid": "2",
+        "dbField": "repair_document_status",
+        "text": "Status",
+        "type": "array",
+        "systemType": "DocumentStatus",
+        "valueOptions": ["New", "XDC", "XDR", "XDT", "XDA", "XDA-I", "XDA-RC", "XDB", "XDI", "XDS", "XDF", "XDA-D", "XDA-NR"]
+    }, {
+        "id": "2.7",
+        "pid": "2",
+        "dbField": "repair_document_substatus",
+        "text": "Substatus",
+        "type": "array",
+        "systemType": "Substatus",
+        "valueOptions": ["WIP", "AGD", "AWP", "Repaired", "Condemned", "RAI", "Transferred", "ASC"]
+    }, {
+        "id": "2.8",
+        "pid": "2",
+        "dbField": "repair_document_esd",
+        "text": "ESD",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "2.9",
+        "pid": "2",
+        "dbField": "repair_document_latest_esd_comments",
+        "text": "Latest ESD Comments",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "2.10",
+        "pid": "2",
+        "dbField": "repair_document_defects",
+        "text": "Defects",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "2.11",
+        "pid": "2",
+        "dbField": "repair_document_malfunctioned_code",
+        "text": "Malfunctioned Code",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "2.12",
+        "pid": "2",
+        "dbField": "repair_document_tag_code",
+        "text": "TAG Code",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "2.13",
+        "pid": "2",
+        "dbField": "repair_document_base",
+        "text": "Base",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "2.14",
+        "pid": "2",
+        "dbField": "repair_document_tat",
+        "text": "TAT",
+        "type": "number",
+        "systemType": "double",
+        "valueOptions": null
+    }, {
+        "id": "2.15",
+        "pid": "2",
+        "dbField": "repair_document_pending_tat",
+        "text": "Pending TAT",
+        "type": "number",
+        "systemType": "double",
+        "valueOptions": null
+    }, {
+        "id": "2.16",
+        "pid": "2",
+        "dbField": "repair_document_tat_exempt",
+        "text": "TAT Exempt",
+        "type": "bool",
+        "systemType": "bool",
+        "valueOptions": null
+    }]
+}, {
+    "id": "3",
+    "text": "End Item",
+    "dbTable": "",
+    "columns": [{
+        "id": "3.1",
+        "pid": "3",
+        "dbField": "end_item_nsn",
+        "text": "NSN",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "3.2",
+        "pid": "3",
+        "dbField": "end_item_pn",
+        "text": "P/N",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "3.3",
+        "pid": "3",
+        "dbField": "end_item_sn",
+        "text": "S/N",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "3.4",
+        "pid": "3",
+        "dbField": "end_item_noun",
+        "text": "Noun",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "3.5",
+        "pid": "3",
+        "dbField": "end_item_acq_cost",
+        "text": "ACQ Cost",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "3.6",
+        "pid": "3",
+        "dbField": "end_item_active",
+        "text": "Active",
+        "type": "bool",
+        "systemType": "bool",
+        "valueOptions": null
+    }, {
+        "id": "3.7",
+        "pid": "3",
+        "dbField": "end_item_tat_exempt",
+        "text": "TAT Exempt",
+        "type": "bool",
+        "systemType": "bool",
+        "valueOptions": null
+    }, {
+        "id": "3.8",
+        "pid": "3",
+        "dbField": "end_item_type",
+        "text": "Type",
+        "type": "array",
+        "systemType": "string",
+        "valueOptions": ["EW", "EW ALR56", "F-15", "LNT Pod", "SPS"]
+    }, {
+        "id": "3.13",
+        "pid": "3",
+        "dbField": "end_item_total_cost",
+        "text": "Total Cost",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "3.14",
+        "pid": "3",
+        "dbField": "end_item_avg_cost",
+        "text": "Avg Cost",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "3.15",
+        "pid": "3",
+        "dbField": "end_item_avg_tat",
+        "text": "Avg TAT",
+        "type": "number",
+        "systemType": "double",
+        "valueOptions": null
+    }]
+}, {
+    "id": "4",
+    "text": "SOR",
+    "dbTable": "",
+    "columns": [{
+        "id": "4.1",
+        "pid": "4",
+        "dbField": "sor_name",
+        "text": "Name",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "4.2",
+        "pid": "4",
+        "dbField": "sor_log_spec",
+        "text": "Log Spec",
+        "type": "array",
+        "systemType": "string",
+        "valueOptions": ["Bilal", "Chuck", "Craig", "Jan", "Karen"]
+    }, {
+        "id": "4.3",
+        "pid": "4",
+        "dbField": "sor_contracts_manager",
+        "text": "Contracts Manager",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "4.4",
+        "pid": "4",
+        "dbField": "sor_poc",
+        "text": "PoC",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "4.10",
+        "pid": "4",
+        "dbField": "sor_total_cost",
+        "text": "Total Cost",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "4.11",
+        "pid": "4",
+        "dbField": "sor_avg_cost",
+        "text": "Avg Cost",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "4.12",
+        "pid": "4",
+        "dbField": "sor_avg_tat",
+        "text": "Avg TAT",
+        "type": "number",
+        "systemType": "double",
+        "valueOptions": null
+    }]
+}, {
+    "id": "5",
+    "text": "XDs",
+    "dbTable": "",
+    "columns": [{
+        "id": "5.1",
+        "pid": "5",
+        "dbField": "xds_350_date",
+        "text": "350 Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.2",
+        "pid": "5",
+        "dbField": "xds_xdc_date",
+        "text": "XDC Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.3",
+        "pid": "5",
+        "dbField": "xds_xdr_date",
+        "text": "XDR Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.4",
+        "pid": "5",
+        "dbField": "xds_xdt_date",
+        "text": "XDT Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.5",
+        "pid": "5",
+        "dbField": "xds_xda_date",
+        "text": "XDA Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.6",
+        "pid": "5",
+        "dbField": "xds_xdai_date",
+        "text": "XDA-I Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.7",
+        "pid": "5",
+        "dbField": "xds_xdarc_date",
+        "text": "XDA-RC Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.8",
+        "pid": "5",
+        "dbField": "xds_xdb_date",
+        "text": "XDB Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.9",
+        "pid": "5",
+        "dbField": "xds_xdi_date",
+        "text": "XDI Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.10",
+        "pid": "5",
+        "dbField": "xds_xds_date",
+        "text": "XDS Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "5.11",
+        "pid": "5",
+        "dbField": "xds_xdf_date",
+        "text": "XDF Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }]
+}, {
+    "id": "6",
+    "text": "Purchase Order",
+    "dbTable": "",
+    "columns": [{
+        "id": "6.1",
+        "pid": "6",
+        "dbField": "purchase_order_date",
+        "text": "Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "6.2",
+        "pid": "6",
+        "dbField": "purchase_order_number",
+        "text": "Number",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "6.3",
+        "pid": "6",
+        "dbField": "purchase_order_revision",
+        "text": "Revision",
+        "type": "number",
+        "systemType": "int",
+        "valueOptions": null
+    }, {
+        "id": "6.4",
+        "pid": "6",
+        "dbField": "purchase_order_tte_price",
+        "text": "TTE Price",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "6.5",
+        "pid": "6",
+        "dbField": "purchase_order_ffp_price",
+        "text": "FFP Price",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "6.6",
+        "pid": "6",
+        "dbField": "purchase_order_other_costs",
+        "text": "Other Costs",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "6.7",
+        "pid": "6",
+        "dbField": "purchase_order_total_cost",
+        "text": "Total Cost",
+        "type": "number",
+        "systemType": "decimal",
+        "valueOptions": null
+    }, {
+        "id": "6.8",
+        "pid": "6",
+        "dbField": "purchase_order_invoiced",
+        "text": "Invoiced",
+        "type": "bool",
+        "systemType": "bool",
+        "valueOptions": null
+    }, {
+        "id": "6.9",
+        "pid": "6",
+        "dbField": "purchase_order_signed",
+        "text": "Signed",
+        "type": "bool",
+        "systemType": "bool",
+        "valueOptions": null
+    }]
+}, {
+    "id": "7",
+    "text": "Latest AGD",
+    "dbTable": "",
+    "columns": [{
+        "id": "7.1",
+        "pid": "7",
+        "dbField": "latest_agd_notify_date",
+        "text": "Notify Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }, {
+        "id": "7.2",
+        "pid": "7",
+        "dbField": "latest_agd_reason",
+        "text": "Reason",
+        "type": "array",
+        "systemType": "DispositionReason",
+        "valueOptions": ["BER", "BPR", "ROD", "SDR", "Transfer", "LTDD", "PQDR", "CSI", "Frustrated"]
+    }, {
+        "id": "7.3",
+        "pid": "7",
+        "dbField": "latest_agd_status",
+        "text": "Status",
+        "type": "array",
+        "systemType": "DispositionResponse",
+        "valueOptions": ["ATR", "ATS", "RAI", "Transfer"]
+    }, {
+        "id": "7.4",
+        "pid": "7",
+        "dbField": "latest_agd_comments",
+        "text": "Comments",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "7.5",
+        "pid": "7",
+        "dbField": "latest_agd_response_date",
+        "text": "Response Date",
+        "type": "date",
+        "systemType": "date",
+        "valueOptions": null
+    }]
+}, {
+    "id": "8",
+    "text": "Shipping Info",
+    "dbTable": "",
+    "columns": [{
+        "id": "8.1",
+        "pid": "8",
+        "dbField": "shipping_info_xdc_carrier",
+        "text": "XDC Carrier",
+        "type": "array",
+        "systemType": "string",
+        "valueOptions": ["A. Duie Pyle", "AAA Cooper", "ABF Freight", "Conway", "DHL", "Emirates Airline", "Estes Express Lines", "FedEx", "Global Tranz", "Global Tranz, ABF Freight", "Old Dominion", "Pitt Ohio", "Roadrunner Trans", "RSAF C-130", "RSAF SOB Truck", "SAIA", "The Carrier Saudi Arabian Airline", "Towne Air Freight", "Unknown", "UPS", "Ward Trucking", "YRC"]
+    }, {
+        "id": "8.2",
+        "pid": "8",
+        "dbField": "shipping_info_xdc_tracking_num",
+        "text": "XDC Tracking Num",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "8.3",
+        "pid": "8",
+        "dbField": "shipping_info_xdc_manifest",
+        "text": "XDC Manifest",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "8.4",
+        "pid": "8",
+        "dbField": "shipping_info_xdb_carrier",
+        "text": "XDB Carrier",
+        "type": "array",
+        "systemType": "string",
+        "valueOptions": ["A. Duie Pyle", "AAA Cooper", "ABF Freight", "Conway", "DHL", "Emirates Airline", "Estes Express Lines", "FedEx", "Global Tranz", "Global Tranz, ABF Freight", "Old Dominion", "Pitt Ohio", "Roadrunner Trans", "RSAF C-130", "RSAF SOB Truck", "SAIA", "The Carrier Saudi Arabian Airline", "Towne Air Freight", "Unknown", "UPS", "Ward Trucking", "YRC"]
+    }, {
+        "id": "8.5",
+        "pid": "8",
+        "dbField": "shipping_info_xdb_tracking_num",
+        "text": "XDB Tracking Num",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "8.6",
+        "pid": "8",
+        "dbField": "shipping_info_xdb_manifest",
+        "text": "XDB Manifest",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "8.7",
+        "pid": "8",
+        "dbField": "shipping_info_xds_carrier",
+        "text": "XDS Carrier",
+        "type": "array",
+        "systemType": "string",
+        "valueOptions": ["A. Duie Pyle", "AAA Cooper", "ABF Freight", "Conway", "DHL", "Emirates Airline", "Estes Express Lines", "FedEx", "Global Tranz", "Global Tranz, ABF Freight", "Old Dominion", "Pitt Ohio", "Roadrunner Trans", "RSAF C-130", "RSAF SOB Truck", "SAIA", "The Carrier Saudi Arabian Airline", "Towne Air Freight", "Unknown", "UPS", "Ward Trucking", "YRC"]
+    }, {
+        "id": "8.8",
+        "pid": "8",
+        "dbField": "shipping_info_xds_tracking_num",
+        "text": "XDS Tracking Num",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }, {
+        "id": "8.9",
+        "pid": "8",
+        "dbField": "shipping_info_xds_manifest",
+        "text": "XDS Manifest",
+        "type": "string",
+        "systemType": "string",
+        "valueOptions": null
+    }]
+}]
