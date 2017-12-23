@@ -1,4 +1,4 @@
-import { action, computed, observable/*, runInAction*/ } from 'mobx';
+import { action, computed, observable /*, runInAction*/ } from 'mobx';
 import { ITableDescriptor } from '../interfaces';
 import { Column } from './models';
 const treeData = require('../test-data/availableColumns.json') as ITableDescriptor[];
@@ -7,7 +7,8 @@ export default class Store {
     @observable availableColumns: ITableDescriptor[] = treeData;
     @observable selectedColumns: Column[] = [];
 
-    @computed get sortedColumns() {
+    @computed
+    get sortedColumns() {
         return this.selectedColumns.filter(
             p => p.sorting && p.sorting.length && p.sorting !== 'None'
         );
