@@ -24,9 +24,9 @@ module.exports = function override(config, env) {
     };
 
     config = rewireLess.withLoaderOptions({
-        /*modifyVars: { 
-          '@font-family': 'Tahoma'
-        },*/
+        modifyVars: {
+            '@font-family': '"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif'
+        },
     })(config, env);
 
     return config;

@@ -14,7 +14,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -27,4 +27,17 @@ body {
 
 img {
   vertical-align: middle;
+}
+
+
+/**
+ ** antd overrides **/
+
+.ant-table-thead>tr>th {
+  font-weight: bold;
+}
+
+.ant-table-middle>.ant-table-content>.ant-table-body>table>.ant-table-thead>tr>th {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
