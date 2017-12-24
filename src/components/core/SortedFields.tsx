@@ -13,21 +13,30 @@ interface IProps {
 @inject('store')
 @observer
 export class SortedFields extends React.Component<IProps, {}> {
+    handleClearAllClick = () => {
+        this.props.store!.clearSortedFieldsList();
+    }
+
     handleRowDrag = (dragIndex: number, hoverIndex: number) => {
         this.props.store!.switchSortedFields(dragIndex, hoverIndex);
     }
 
     render() {
-        const sortedColumns = this.props.store!.sortedFields;
+        const sortedFields = this.props.store!.sortedFields;
 
         return (
-            <Widget title="Sorted Fields" className="aq-sor-cols">
+            <Widget
+                title="Sorted Fields"
+                actions={[{ name: 'Clear all', icon: 'close-circle', isEnabled: sortedFields.length > 0 }]}
+                onActionClick={this.handleClearAllClick}
+                className="aq-sor-cols"
+            >
                 <DndTable
                     columns={this.getColumns()}
                     rowKey={(record: Field) => record.id}
-                    dataSource={sortedColumns}
+                    dataSource={sortedFields}
                     size="middle"
-                    showHeader={sortedColumns.length ? true : false}
+                    showHeader={sortedFields.length ? true : false}
                     pagination={false}
                     onRowDrag={this.handleRowDrag}
                 />

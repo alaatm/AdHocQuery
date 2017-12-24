@@ -15,8 +15,13 @@ export default class Store {
     }
 
     @action
-    public clearAll() {
+    public clearSelectedFieldsList() {
         this.selectedFields = [];
+    }
+
+    @action
+    public clearSortedFieldsList() {
+        this.selectedFields.forEach(p => p.sorting = 'None');
     }
 
     @action

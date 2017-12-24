@@ -13,7 +13,7 @@ interface IProps {
 @observer
 export class SelectedFields extends React.Component<IProps, {}> {
     handleClearAllClick = () => {
-        this.props.store!.clearAll();
+        this.props.store!.clearSelectedFieldsList();
     }
 
     handleRowDrag = (dragIndex: number, hoverIndex: number) => {
@@ -31,8 +31,8 @@ export class SelectedFields extends React.Component<IProps, {}> {
             <Widget
                 title="Selected Fields"
                 actions={[{ name: 'Clear all', icon: 'close-circle', isEnabled: selectedColumns.length > 0 }]}
-                className="aq-sel-cols"
                 onActionClick={this.handleClearAllClick}
+                className="aq-sel-cols"
             >
                 <DndTable
                     columns={this.getColumns()}
