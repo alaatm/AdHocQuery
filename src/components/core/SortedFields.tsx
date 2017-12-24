@@ -4,7 +4,7 @@ import Store from '../../Store';
 import { Icon } from 'antd';
 import { ColumnProps } from 'antd/lib/table';
 import { DndTable, Widget } from '../helpers';
-import { Column } from '../../Store/models';
+import { Field } from '../../Store/models';
 
 interface IProps {
     store?: Store;
@@ -21,10 +21,10 @@ export class SortedFields extends React.Component<IProps, {}> {
         const sortedColumns = this.props.store!.sortedFields;
 
         return (
-            <Widget title="Sorted Columns" className="aq-sor-cols">
+            <Widget title="Sorted Fields" className="aq-sor-cols">
                 <DndTable
                     columns={this.getColumns()}
-                    rowKey={(record: Column) => record.id}
+                    rowKey={(record: Field) => record.id}
                     dataSource={sortedColumns}
                     size="middle"
                     showHeader={sortedColumns.length ? true : false}
@@ -35,7 +35,7 @@ export class SortedFields extends React.Component<IProps, {}> {
         );
     }
 
-    private getColumns(): ColumnProps<Column>[] {
+    private getColumns(): ColumnProps<Field>[] {
         return [{
             title: 'Column',
             dataIndex: 'text',

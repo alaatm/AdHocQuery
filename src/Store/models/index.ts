@@ -1,3 +1,3 @@
-import { Column } from './Column';
+import { Field } from './Field';
 
-export { Column };
+export { Field };

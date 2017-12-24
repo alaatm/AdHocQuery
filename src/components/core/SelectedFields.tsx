@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react';
 import Store from '../../Store';
 import { ColumnProps } from 'antd/lib/table';
 import { EditableText, EditableTextDropdown, DndTable, Widget } from '../helpers';
-import { Column } from '../../Store/models';
+import { Field } from '../../Store/models';
 
 interface IProps {
     store?: Store;
@@ -24,10 +24,10 @@ export class SelectedFields extends React.Component<IProps, {}> {
         console.log(sortedColumns.length);
 
         return (
-            <Widget title="Selected Columns" className="aq-sel-cols">
+            <Widget title="Selected Fields" className="aq-sel-cols">
                 <DndTable
                     columns={this.getColumns()}
-                    rowKey={(record: Column) => record.id}
+                    rowKey={(record: Field) => record.id}
                     dataSource={selectedColumns}
                     size="middle"
                     showHeader={selectedColumns.length ? true : false}
@@ -38,7 +38,7 @@ export class SelectedFields extends React.Component<IProps, {}> {
         );
     }
 
-    private getColumns(): ColumnProps<Column>[] {
+    private getColumns(): ColumnProps<Field>[] {
         return [{
             title: 'Expression',
             dataIndex: 'text',

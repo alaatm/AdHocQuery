@@ -1,12 +1,12 @@
-import IColumnDescriptor from './IColumnDescriptor';
+import IFieldDescriptor from './IFieldDescriptor';
 
 export default interface ITableDescriptor {
     id: string;
     dbTable: string;
     text: string;
-    columns: IColumnDescriptor[];
+    fields: IFieldDescriptor[];
 }
 
 export function isTableDescriptor(object: {}): object is ITableDescriptor {
-    return 'columns' in object;
+    return 'fields' in object;
 }

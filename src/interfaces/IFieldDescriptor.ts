@@ -1,4 +1,4 @@
-export default interface IColumnDescriptor {
+export default interface IFieldDescriptor {
     id: string;
     pid: string;
     dbField: string;
@@ -8,6 +8,6 @@ export default interface IColumnDescriptor {
     valueOptions: string[] | null;
 }
 
-export function isColumnDescriptor(object: {}): object is IColumnDescriptor {
+export function isFieldDescriptor(object: {}): object is IFieldDescriptor {
     return 'systemType' in object;
 }

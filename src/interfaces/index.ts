@@ -1,4 +1,4 @@
-import IColumnDescriptor, { isColumnDescriptor } from './IColumnDescriptor';
+import IFieldDescriptor, { isFieldDescriptor } from './IFieldDescriptor';
 import ITableDescriptor, { isTableDescriptor } from './ITableDescriptor';
 
-export { IColumnDescriptor, ITableDescriptor, isTableDescriptor, isColumnDescriptor };
+export { IFieldDescriptor, ITableDescriptor, isTableDescriptor, isFieldDescriptor };

@@ -1,11 +1,11 @@
 import { action, computed, observable /*, runInAction*/ } from 'mobx';
 import { ITableDescriptor } from '../interfaces';
-import { Column } from './models';
+import { Field } from './models';
 const treeData = require('../test-data/fields.json') as ITableDescriptor[];
 
 export default class Store {
     @observable allFields: ITableDescriptor[] = treeData;
-    @observable selectedFields: Column[] = [];
+    @observable selectedFields: Field[] = [];
 
     @computed
     get sortedFields() {
@@ -16,7 +16,7 @@ export default class Store {
 
     @action
     public setSelectedFields(keys: string[]) {
-        const availableColumns = this.allFields.reduce((c, t) => [...c, ...t.columns], []);
+        const fieldList = this.allFields.reduce((c, t) => [...c, ...t.fields], []);
         const selectedKeys = this.selectedFields.map(p => p.id);
 
         for (let i = this.selectedFields.length - 1; i >= 0; i--) {
@@ -28,9 +28,9 @@ export default class Store {
         const self = this; // ???
         keys.forEach(k => {
             if (selectedKeys.indexOf(k) < 0) {
-                const column = availableColumns.filter(c => c.id === k)[0];
+                const column = fieldList.filter(c => c.id === k)[0];
                 if (column) {
-                    let addedColumn = new Column(column);
+                    let addedColumn = new Field(column);
                     self.selectedFields.push(addedColumn);
                 }
             }

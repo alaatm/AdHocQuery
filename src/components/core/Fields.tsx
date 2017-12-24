@@ -3,8 +3,7 @@ import { inject, observer } from 'mobx-react';
 import Store from '../../Store';
 import { Widget } from '../helpers';
 import { Tree } from 'antd';
-import { ITableDescriptor, isTableDescriptor } from '../../interfaces';
-import IColumnDescriptor from '../../interfaces/IColumnDescriptor';
+import { IFieldDescriptor, ITableDescriptor, isTableDescriptor } from '../../interfaces';
 const TreeNode = Tree.TreeNode;
 
 interface IProps {
@@ -23,12 +22,12 @@ export class Fields extends React.Component<IProps, {}> {
         this.props.store!.setSelectedFields(checkedKeys);
     }
 
-    renderNodes(data: (ITableDescriptor | IColumnDescriptor)[]): JSX.Element[] {
+    renderNodes(data: (ITableDescriptor | IFieldDescriptor)[]): JSX.Element[] {
         return data.map((item, i) => {
             if (isTableDescriptor(item)) {
                 return (
                     <TreeNode title={item.text} key={item.id} selectable={false}>
-                        {this.renderNodes(item.columns)}
+                        {this.renderNodes(item.fields)}
                     </TreeNode>
                 );
             }
@@ -38,7 +37,7 @@ export class Fields extends React.Component<IProps, {}> {
 
     render() {
         return (
-            <Widget title="Available Columns" className="aq-avail-cols">
+            <Widget title="Available Fields" className="aq-avail-cols">
                 <Tree
                     checkable={true}
                     onCheck={this.handleCheck}
