@@ -7,6 +7,10 @@
     margin-top: 10px;
 }
 
+.aq-widget i {
+    margin-right: 10px
+}
+
 .aq-widget-header {
     background: #f8f7f7;
     border-top: 6px solid #1777b1;
