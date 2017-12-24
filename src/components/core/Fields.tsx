@@ -36,11 +36,14 @@ export class Fields extends React.Component<IProps, {}> {
     }
 
     render() {
+        const checkedKeys = this.props.store!.selectedFields.map(p => p.id);
+
         return (
             <Widget title="Available Fields" className="aq-avail-cols">
                 <Tree
                     checkable={true}
                     onCheck={this.handleCheck}
+                    checkedKeys={checkedKeys}
                 >
                     {this.renderNodes(this.props.store!.allFields)}
                 </Tree>
