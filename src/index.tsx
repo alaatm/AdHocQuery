@@ -8,11 +8,11 @@ mobx.useStrict(true);
 
 let mobxDevTools: JSX.Element | boolean = false;
 if (process.env.NODE_ENV === 'development') {
-  const DevTools = require('mobx-react-devtools').default;
-  mobxDevTools = <DevTools />;
+    const DevTools = require('mobx-react-devtools').default;
+    mobxDevTools = <DevTools />;
 }
 
 ReactDOM.render(
-  <div>{mobxDevTools}<Layout /></div>,
-  document.getElementById('root') as HTMLElement
+    <div>{mobxDevTools}<Layout /></div>,
+    document.getElementById('root') as HTMLElement
 );
