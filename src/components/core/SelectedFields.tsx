@@ -12,6 +12,10 @@ interface IProps {
 @inject('store')
 @observer
 export class SelectedFields extends React.Component<IProps, {}> {
+    handleClearAllClick = () => {
+        this.props.store!.clearAll();
+    }
+
     handleRowDrag = (dragIndex: number, hoverIndex: number) => {
         this.props.store!.switchSelectedFields(dragIndex, hoverIndex);
     }
@@ -24,7 +28,12 @@ export class SelectedFields extends React.Component<IProps, {}> {
         console.log(sortedColumns.length);
 
         return (
-            <Widget title="Selected Fields" className="aq-sel-cols">
+            <Widget
+                title="Selected Fields"
+                actions={[{ name: 'Clear all', icon: 'close-circle', isEnabled: selectedColumns.length > 0 }]}
+                className="aq-sel-cols"
+                onActionClick={this.handleClearAllClick}
+            >
                 <DndTable
                     columns={this.getColumns()}
                     rowKey={(record: Field) => record.id}

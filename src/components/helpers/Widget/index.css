@@ -20,6 +20,17 @@
     font-size: 14pt;
 }
 
+.aq-widget-action {
+    margin-top: 4px;
+    margin-right: 10px;
+    float: right;
+}
+
+.aq-widget-action a.disabled {
+    pointer-events: none;
+    color: #ccc;
+}
+
 .aq-widget-body {
     padding: 10px;
     overflow-y: auto;
