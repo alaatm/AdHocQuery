@@ -2,6 +2,7 @@ import { IColumnDescriptor } from '../../interfaces';
 import { action, observable } from 'mobx';
 
 export class Column implements IColumnDescriptor {
+    static _sortIndex = 0;
     id: string;
     pid: string;
     dbField: string;
@@ -12,7 +13,7 @@ export class Column implements IColumnDescriptor {
 
     @observable title: string;
     @observable sorting: string;
-    @observable order: number;
+    @observable sortingIndex: number;
 
     constructor(column: IColumnDescriptor) {
         this.id = column.id;
@@ -25,7 +26,7 @@ export class Column implements IColumnDescriptor {
 
         this.title = column.text;
         this.sorting = 'None';
-        this.order = 0;
+        this.sortingIndex = Column._sortIndex++;
     }
 
     @action

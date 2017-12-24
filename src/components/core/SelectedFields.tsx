@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import Store from '../../Store';
-import { Table } from 'antd';
 import { ColumnProps } from 'antd/lib/table';
-import { EditableText, EditableTextDropdown, Widget } from '../helpers';
+import { EditableText, EditableTextDropdown, DndTable, Widget } from '../helpers';
 import { Column } from '../../Store/models';
 
 interface IProps {
@@ -13,6 +12,10 @@ interface IProps {
 @inject('store')
 @observer
 export class SelectedFields extends React.Component<IProps, {}> {
+    handleRowDrag = (dragIndex: number, hoverIndex: number) => {
+        this.props.store!.switchSelectedFields(dragIndex, hoverIndex);
+    }
+
     render() {
         const selectedColumns = this.props.store!.selectedFields.slice();
         // The below code is just there so that we can pick up mobx
@@ -22,13 +25,14 @@ export class SelectedFields extends React.Component<IProps, {}> {
 
         return (
             <Widget title="Selected Columns" className="aq-sel-cols">
-                <Table
+                <DndTable
                     columns={this.getColumns()}
                     rowKey={(record: Column) => record.id}
                     dataSource={selectedColumns}
                     size="middle"
                     showHeader={selectedColumns.length ? true : false}
                     pagination={false}
+                    onRowDrag={this.handleRowDrag}
                 />
             </Widget>
         );

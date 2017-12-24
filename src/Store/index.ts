@@ -11,7 +11,7 @@ export default class Store {
     get sortedFields() {
         return this.selectedFields.filter(
             p => p.sorting && p.sorting.length && p.sorting !== 'None'
-        ).sort(p => p.sortingIndex);
+        ).sort((a, b) => a.sortingIndex - b.sortingIndex);
     }
 
     @action
@@ -35,10 +35,23 @@ export default class Store {
                 }
             }
         });
+    }
 
-        // Update column orderings
-        this.selectedColumns.forEach((c, i) => {
-            c.order = i;
-        });
+    @action
+    public switchSelectedFields(sourceIndex: number, targetIndex: number) {
+        const source = this.selectedFields[sourceIndex];
+        const target = this.selectedFields[targetIndex];
+
+        this.selectedFields[sourceIndex] = target;
+        this.selectedFields[targetIndex] = source;
+    }
+
+    @action
+    public switchSortedFields(sourceIndex: number, targetIndex: number) {
+        const source = this.sortedFields[sourceIndex];
+        const target = this.sortedFields[targetIndex];
+
+        source.sortingIndex = targetIndex;
+        target.sortingIndex = sourceIndex;
     }
 }

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import Store from '../../Store';
-import { Table, Icon } from 'antd';
+import { Icon } from 'antd';
 import { ColumnProps } from 'antd/lib/table';
-import { Widget } from '../helpers';
+import { DndTable, Widget } from '../helpers';
 import { Column } from '../../Store/models';
 
 interface IProps {
@@ -13,18 +13,23 @@ interface IProps {
 @inject('store')
 @observer
 export class SortedFields extends React.Component<IProps, {}> {
+    handleRowDrag = (dragIndex: number, hoverIndex: number) => {
+        this.props.store!.switchSortedFields(dragIndex, hoverIndex);
+    }
+
     render() {
         const sortedColumns = this.props.store!.sortedFields;
 
         return (
             <Widget title="Sorted Columns" className="aq-sor-cols">
-                <Table
+                <DndTable
                     columns={this.getColumns()}
                     rowKey={(record: Column) => record.id}
                     dataSource={sortedColumns}
                     size="middle"
                     showHeader={sortedColumns.length ? true : false}
                     pagination={false}
+                    onRowDrag={this.handleRowDrag}
                 />
             </Widget>
         );
