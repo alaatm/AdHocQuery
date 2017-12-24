@@ -6,7 +6,7 @@ export class Field implements IFieldDescriptor {
     pid: string;
     dbField: string;
     text: string;
-    type: string;
+    type: 'array' | 'bool' | 'date' | 'number' | 'string';
     systemType: string;
     valueOptions: string[] | null;
 
