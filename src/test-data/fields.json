@@ -2,7 +2,7 @@
     "id": "1",
     "text": "Contract",
     "dbTable": "",
-    "columns": [{
+    "fields": [{
         "id": "1.1",
         "pid": "1",
         "dbField": "contract_number",
@@ -23,7 +23,7 @@
     "id": "2",
     "text": "Repair Document",
     "dbTable": "",
-    "columns": [{
+    "fields": [{
         "id": "2.1",
         "pid": "2",
         "dbField": "repair_document_dcn",
@@ -156,7 +156,7 @@
     "id": "3",
     "text": "End Item",
     "dbTable": "",
-    "columns": [{
+    "fields": [{
         "id": "3.1",
         "pid": "3",
         "dbField": "end_item_nsn",
@@ -249,7 +249,7 @@
     "id": "4",
     "text": "SOR",
     "dbTable": "",
-    "columns": [{
+    "fields": [{
         "id": "4.1",
         "pid": "4",
         "dbField": "sor_name",
@@ -310,7 +310,7 @@
     "id": "5",
     "text": "XDs",
     "dbTable": "",
-    "columns": [{
+    "fields": [{
         "id": "5.1",
         "pid": "5",
         "dbField": "xds_350_date",
@@ -403,7 +403,7 @@
     "id": "6",
     "text": "Purchase Order",
     "dbTable": "",
-    "columns": [{
+    "fields": [{
         "id": "6.1",
         "pid": "6",
         "dbField": "purchase_order_date",
@@ -480,7 +480,7 @@
     "id": "7",
     "text": "Latest AGD",
     "dbTable": "",
-    "columns": [{
+    "fields": [{
         "id": "7.1",
         "pid": "7",
         "dbField": "latest_agd_notify_date",
@@ -525,7 +525,7 @@
     "id": "8",
     "text": "Shipping Info",
     "dbTable": "",
-    "columns": [{
+    "fields": [{
         "id": "8.1",
         "pid": "8",
         "dbField": "shipping_info_xdc_carrier",
