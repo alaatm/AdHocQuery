@@ -2,7 +2,6 @@ import { IFieldDescriptor } from '../../interfaces';
 import { action, observable } from 'mobx';
 
 export class Field implements IFieldDescriptor {
-    static _sortIndex = 0;
     id: string;
     pid: string;
     dbField: string;
@@ -26,7 +25,6 @@ export class Field implements IFieldDescriptor {
 
         this.title = field.text;
         this.sorting = 'None';
-        this.sortingIndex = Field._sortIndex++;
     }
 
     @action
@@ -35,7 +33,11 @@ export class Field implements IFieldDescriptor {
     }
 
     @action
-    public updateSorting = (value: string) => {
+    public updateSorting = (value: string, maxIndex: number) => {
+        if (this.sorting === 'None') {
+            // Adding new item, set index to bottom of list
+            this.sortingIndex = maxIndex + 1;
+        }
         this.sorting = value;
     }
 

@@ -25,6 +25,7 @@ export class SelectedFields extends React.Component<IProps, {}> {
         // The below code is just there so that we can pick up mobx
         // store changes on sorted columns :-/
         const sortedColumns = this.props.store!.sortedFields;
+        // tslint:disable-next-line:no-console
         console.log(sortedColumns.length);
 
         return (
@@ -47,6 +48,17 @@ export class SelectedFields extends React.Component<IProps, {}> {
         );
     }
 
+    handleSortingChange(field: Field) {
+        const sortedFields = this.props.store!.sortedFields;
+
+        return (value: string) => {
+            field.updateSorting(
+                value,
+                Math.max(...sortedFields.map(o => o.sortingIndex), 0)
+            );
+        };
+    }
+
     private getColumns(): ColumnProps<Field>[] {
         return [{
             title: 'Expression',
@@ -63,7 +75,7 @@ export class SelectedFields extends React.Component<IProps, {}> {
             render: (text, item) => (
                 <EditableTextDropdown
                     value={text || 'None'}
-                    onChange={item.updateSorting}
+                    onChange={this.handleSortingChange(item)}
                     valueOptions={['Asc', 'Desc', 'None']}
                 />)
         }];
