@@ -1,8 +1,8 @@
 import { Header } from './Header';
-import AvailableColumns from './AvailableColumns';
+import Fields from './Fields';
 import QueryFilters from './QueryFilters';
 import Results from './Results';
-import SelectedColumns from './SelectedColumns';
-import SortedColumns from './SortedColumns';
+import SelectedFields from './SelectedFields';
+import SortedFields from './SortedFields';
 
-export { AvailableColumns, Header, QueryFilters, Results, SelectedColumns, SortedColumns };
+export { Fields, Header, QueryFilters, Results, SelectedFields, SortedFields };

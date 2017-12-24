@@ -13,14 +13,14 @@ interface IProps {
 
 @inject('store')
 @observer
-export class AvailableColumns extends React.Component<IProps, {}> {
+export class Fields extends React.Component<IProps, {}> {
     constructor(props: {}) {
         super(props);
         this.handleCheck = this.handleCheck.bind(this);
     }
 
     handleCheck(checkedKeys: string[]) {
-        this.props.store!.selectColumns(checkedKeys);
+        this.props.store!.setSelectedFields(checkedKeys);
     }
 
     renderNodes(data: (ITableDescriptor | IColumnDescriptor)[]): JSX.Element[] {
@@ -43,11 +43,11 @@ export class AvailableColumns extends React.Component<IProps, {}> {
                     checkable={true}
                     onCheck={this.handleCheck}
                 >
-                    {this.renderNodes(this.props.store!.availableColumns)}
+                    {this.renderNodes(this.props.store!.allFields)}
                 </Tree>
             </Widget>
         );
     }
 }
 
-export default AvailableColumns;
+export default Fields;

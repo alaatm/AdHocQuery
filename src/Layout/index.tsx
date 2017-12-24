@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Provider } from 'mobx-react';
-import { AvailableColumns, Header, QueryFilters, Results, SelectedColumns, SortedColumns } from '../components/core';
+import { Fields, Header, QueryFilters, Results, SelectedFields, SortedFields } from '../components/core';
 
 import Store from '../Store';
 
@@ -19,15 +19,15 @@ export default class Layout extends React.Component {
 
                     <div className="row">
                         <div className="col-md-5">
-                            <AvailableColumns />
+                            <Fields />
                         </div>
                         <div className="col-md-19">
                             <div className="row">
                                 <div className="col-md-16 no-pad">
-                                    <SelectedColumns />
+                                    <SelectedFields />
                                 </div>
                                 <div className="col-md-8">
-                                    <SortedColumns />
+                                    <SortedFields />
                                 </div>
                             </div>
                             <div className="row">

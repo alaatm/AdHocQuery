@@ -12,12 +12,12 @@ interface IProps {
 
 @inject('store')
 @observer
-export class SelectedColumns extends React.Component<IProps, {}> {
+export class SelectedFields extends React.Component<IProps, {}> {
     render() {
-        const selectedColumns = this.props.store!.selectedColumns.slice();
+        const selectedColumns = this.props.store!.selectedFields.slice();
         // The below code is just there so that we can pick up mobx
         // store changes on sorted columns :-/
-        const sortedColumns = this.props.store!.sortedColumns;
+        const sortedColumns = this.props.store!.sortedFields;
         console.log(sortedColumns.length);
 
         return (
@@ -57,4 +57,4 @@ export class SelectedColumns extends React.Component<IProps, {}> {
     }
 }
 
-export default SelectedColumns;
+export default SelectedFields;

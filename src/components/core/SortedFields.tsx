@@ -12,9 +12,9 @@ interface IProps {
 
 @inject('store')
 @observer
-export class SortedColumns extends React.Component<IProps, {}> {
+export class SortedFields extends React.Component<IProps, {}> {
     render() {
-        const sortedColumns = this.props.store!.sortedColumns;
+        const sortedColumns = this.props.store!.sortedFields;
 
         return (
             <Widget title="Sorted Columns" className="aq-sor-cols">
@@ -48,4 +48,4 @@ export class SortedColumns extends React.Component<IProps, {}> {
     }
 }
 
-export default SortedColumns;
+export default SortedFields;
