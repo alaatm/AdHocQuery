@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Provider } from 'mobx-react';
-import { Fields, Header, QueryFilters, Results, SelectedFields, SortedFields } from '../components/core';
+import { Fields, Footer, Header, QueryFilters, Results, SelectedFields, SortedFields } from '../components/core';
 
 import Store from '../Store';
 
@@ -43,6 +43,8 @@ export default class Layout extends React.Component {
                             <Results />
                         </div>
                     </div>
+
+                    <Footer />
                 </div>
             </Provider>
         );
