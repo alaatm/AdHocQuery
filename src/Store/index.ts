@@ -25,7 +25,7 @@ export default class Store {
     }
 
     @action
-    public setSelectedFields(keys: string[]) {
+    public addToSelectedFields(keys: string[]) {
         const fieldList = this.allFields.reduce((c, t) => [...c, ...t.fields], []);
         const selectedKeys = this.selectedFields.map(p => p.id);
 

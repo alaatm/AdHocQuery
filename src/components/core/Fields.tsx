@@ -19,7 +19,7 @@ export class Fields extends React.Component<IProps, {}> {
     }
 
     handleCheck(checkedKeys: string[]) {
-        this.props.store!.setSelectedFields(checkedKeys);
+        this.props.store!.addToSelectedFields(checkedKeys);
     }
 
     renderNodes(data: (ITableDescriptor | IFieldDescriptor)[]): JSX.Element[] {
