@@ -38,10 +38,11 @@ export default class Store {
         const self = this; // ???
         keys.forEach(k => {
             if (selectedKeys.indexOf(k) < 0) {
-                const column = fieldList.filter(c => c.id === k)[0];
-                if (column) {
-                    let addedColumn = new Field(column);
-                    self.selectedFields.push(addedColumn);
+                const field = fieldList.filter(c => c.id === k)[0];
+                if (field) {
+                    const table = this.allFields.filter(p => p.id === field.pid)[0];
+                    let addedField = new Field(field, table);
+                    self.selectedFields.push(addedField);
                 }
             }
         });

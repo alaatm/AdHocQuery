@@ -1,4 +1,4 @@
-import { IFieldDescriptor } from '../../interfaces';
+import { IFieldDescriptor, ITableDescriptor } from '../../interfaces';
 import { action, observable } from 'mobx';
 
 export class Field implements IFieldDescriptor {
@@ -14,16 +14,16 @@ export class Field implements IFieldDescriptor {
     @observable sorting: string;
     @observable sortingIndex: number;
 
-    constructor(field: IFieldDescriptor) {
+    constructor(field: IFieldDescriptor, table: ITableDescriptor) {
         this.id = field.id;
         this.pid = field.pid;
         this.dbField = field.dbField;
-        this.text = field.text;
+        this.text = `${table.text}.${field.text}`;
         this.type = field.type;
         this.systemType = field.systemType;
         this.valueOptions = field.valueOptions;
 
-        this.title = field.text;
+        this.title = this.text;
         this.sorting = 'None';
     }
 
