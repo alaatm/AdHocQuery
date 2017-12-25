@@ -46,8 +46,9 @@ export class SortedFields extends React.Component<IProps, {}> {
 
     private getColumns(): ColumnProps<Field>[] {
         return [{
-            title: 'Column',
+            title: 'Field',
             dataIndex: 'text',
+            width: '60%'
         }, {
             title: 'Sorting',
             dataIndex: 'sorting',
