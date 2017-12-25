@@ -7,12 +7,17 @@ import './index.css';
 interface IProps {
     icon?: string;
     title: string;
+    disabled?: boolean;
     actions?: IWidgetAction[];
     onActionClick?: (action: string) => void;
     className?: string;
     children?: React.ReactNode;
 }
 export class Widget extends React.Component<IProps, {}> {
+    public static defaultProps: Partial<IProps> = {
+        disabled: false
+    };
+
     constructor(props: IProps) {
         super(props);
     }
@@ -24,7 +29,7 @@ export class Widget extends React.Component<IProps, {}> {
     }
 
     render() {
-        const { icon, title, actions } = this.props;
+        const { icon, title, actions, disabled } = this.props;
 
         return (
             <div className="aq-widget">
@@ -33,7 +38,7 @@ export class Widget extends React.Component<IProps, {}> {
                     <span className="aq-widget-title">{title}</span>
                     {actions && actions.map((a, i) => (
                         <div key={i} className="aq-widget-action">
-                            <a className={!a.isEnabled ? 'disabled' : ''}>
+                            <a className={!a.isEnabled || disabled ? 'disabled' : ''}>
                                 <Icon type={a.icon} />
                                 <span onClick={this.handleActionClick.bind(this, a)}>{a.name}</span>
                             </a>
