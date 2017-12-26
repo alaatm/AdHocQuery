@@ -79,6 +79,19 @@ export class SelectedFields extends React.Component<IProps, {}> {
                     onChange={this.handleSortingChange(item)}
                     valueOptions={['Asc', 'Desc', 'None']}
                 />)
+        }, {
+            title: '',
+            className: 'actions',
+            render: (_, item) => (
+                <React.Fragment>
+                    <a href="#" >
+                        <i className="icon-function" title="Toggle aggregate/simple column" />
+                    </a>
+                    <a href="#">
+                        <i className="icon-times" title="Delete" />
+                    </a>
+                </React.Fragment>
+            )
         }];
     }
 }

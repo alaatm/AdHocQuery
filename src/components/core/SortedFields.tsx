@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import Store from '../../Store';
-import { Icon } from 'antd';
 import { ColumnProps } from 'antd/lib/table';
 import { DndTable, Widget } from '../helpers';
 import { Field } from '../../Store/models';
@@ -55,10 +54,10 @@ export class SortedFields extends React.Component<IProps, {}> {
             dataIndex: 'sorting',
         }, {
             title: '',
-            className: 'manage',
+            className: 'actions',
             render: (_, item) => (
                 <a href="#" onClick={item.removeSorting}>
-                    <Icon type="delete" title="Delete" />
+                    <i className="icon-times" title="Delete" />
                 </a>)
         }];
     }
