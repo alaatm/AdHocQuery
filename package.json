@@ -1,5 +1,5 @@
 {
-  "name": "adhoq-query",
+  "name": "adhoq-query-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
