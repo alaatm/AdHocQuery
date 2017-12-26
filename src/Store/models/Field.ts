@@ -13,6 +13,7 @@ export class Field implements IFieldDescriptor {
     @observable title: string;
     @observable sorting: string;
     @observable sortingIndex: number;
+    @observable aggregate?: string;
 
     constructor(field: IFieldDescriptor, table: ITableDescriptor) {
         this.id = field.id;
@@ -44,5 +45,13 @@ export class Field implements IFieldDescriptor {
     @action
     public removeSorting = () => {
         this.sorting = 'None';
+    }
+
+    @action setAggregate(value: string) {
+        if (value === 'None') {
+            this.aggregate = undefined;
+            return;
+        }
+        this.aggregate = value;
     }
 }

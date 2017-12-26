@@ -193,3 +193,7 @@
 .ant-table-tbody>tr:hover>td.actions a {
     opacity: 1;
 }
+
+.ant-table-tbody>tr>td.actions a.has-aggregate {
+    opacity: 1;
+}

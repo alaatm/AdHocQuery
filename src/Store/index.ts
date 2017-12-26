@@ -65,6 +65,12 @@ export default class Store {
     }
 
     @action
+    removeSelectedField(field: Field) {
+        const index = this.selectedFields.indexOf(field);
+        this.selectedFields.splice(index, 1);
+    }
+
+    @action
     public switchSelectedFields(sourceIndex: number, targetIndex: number) {
         const source = this.selectedFields[sourceIndex];
         const target = this.selectedFields[targetIndex];

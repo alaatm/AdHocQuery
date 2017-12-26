@@ -4,6 +4,8 @@ import Store from '../../Store';
 import { ColumnProps } from 'antd/lib/table';
 import { EditableText, EditableTextDropdown, DndTable, Widget } from '../helpers';
 import { Field } from '../../Store/models';
+import { Dropdown, Menu } from 'antd';
+import { ClickParam } from 'antd/lib/menu';
 
 interface IProps {
     store?: Store;
@@ -56,6 +58,20 @@ export class SelectedFields extends React.Component<IProps, {}> {
         };
     }
 
+    handleFieldAggregateUpdateClick(field: Field) {
+        return (param: ClickParam) => {
+            this.forceUpdate();
+            field.setAggregate(param.key);
+        };
+    }
+
+    handleFieldRemoveClick(field: Field) {
+        const store = this.props.store!;
+        return () => {
+            store.removeSelectedField(field);
+        };
+    }
+
     private getColumns(): ColumnProps<Field>[] {
         return [{
             title: 'Expression',
@@ -78,16 +94,61 @@ export class SelectedFields extends React.Component<IProps, {}> {
         }, {
             title: '',
             className: 'actions',
-            render: (_, item) => (
-                <React.Fragment>
-                    <a href="#" >
-                        <i className="icon-function" title="Toggle aggregate/simple column" />
-                    </a>
-                    <a href="#">
-                        <i className="icon-times" title="Delete" />
-                    </a>
-                </React.Fragment>
-            )
+            render: (_, item) => {
+                const strFieldMenu = (
+                    <Menu onClick={this.handleFieldAggregateUpdateClick(item)}>
+                        <Menu.Item key="None">None</Menu.Item>
+                        <Menu.Divider />
+                        <Menu.Item key="Count">Count</Menu.Item>
+                    </Menu>
+                );
+
+                const dateFieldMenu = (
+                    <Menu onClick={this.handleFieldAggregateUpdateClick(item)}>
+                        <Menu.Item key="Count">None</Menu.Item>
+                        <Menu.Divider />
+                        <Menu.Item key="Count">Count</Menu.Item>
+                        <Menu.Item key="Minimum">Minimum</Menu.Item>
+                        <Menu.Item key="Maximum">Maximum</Menu.Item>
+                    </Menu>
+                );
+
+                const numericFieldMenu = (
+                    <Menu onClick={this.handleFieldAggregateUpdateClick(item)}>
+                        <Menu.Item key="Count">None</Menu.Item>
+                        <Menu.Divider />
+                        <Menu.Item key="Sum">Sum</Menu.Item>
+                        <Menu.Item key="Count">Count</Menu.Item>
+                        <Menu.Item key="Average">Average</Menu.Item>
+                        <Menu.Item key="Minimum">Minimum</Menu.Item>
+                        <Menu.Item key="Maximum">Maximum</Menu.Item>
+                    </Menu>
+                );
+
+                let menu;
+                if (item.type === 'array' || item.type === 'bool' || item.type === 'string') {
+                    menu = strFieldMenu;
+                } else if (item.type === 'date') {
+                    menu = dateFieldMenu;
+                } else if (item.type === 'number') {
+                    menu = numericFieldMenu;
+                } else {
+                    throw new Error(`Invalid item type: '${item.type}'`);
+                }
+
+                return (
+                    <React.Fragment>
+                        <Dropdown overlay={menu} trigger={['click']}>
+                            <a href="#" className={item.aggregate ? 'has-aggregate' : ''}>
+                                <i className="icon-font" title="Toggle aggregate/simple column" />
+                            </a>
+                        </Dropdown>
+                        <a href="#" onClick={this.handleFieldRemoveClick(item)} >
+                            <i className="icon-times" title="Delete" />
+                        </a>
+                    </React.Fragment>
+                );
+            }
         }];
     }
 }
