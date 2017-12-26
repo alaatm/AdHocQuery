@@ -22,11 +22,6 @@ export class SelectedFields extends React.Component<IProps, {}> {
 
     render() {
         const selectedColumns = this.props.store!.selectedFields.slice();
-        // The below code is just there so that we can pick up mobx
-        // store changes on sorted columns :-/
-        const sortedColumns = this.props.store!.sortedFields;
-        // tslint:disable-next-line:no-console
-        console.log(sortedColumns.length);
 
         return (
             <Widget
@@ -53,6 +48,7 @@ export class SelectedFields extends React.Component<IProps, {}> {
         const sortedFields = this.props.store!.sortedFields;
 
         return (value: string) => {
+            this.forceUpdate();
             field.updateSorting(
                 value,
                 Math.max(...sortedFields.map(o => o.sortingIndex), 0)
