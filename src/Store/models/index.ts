@@ -1,3 +1,5 @@
 import { Field } from './Field';
+import { QueryFilter } from './QueryFilter';
+import { QueryFilterGroup } from './QueryFilterGroup';
 
-export { Field };
+export { Field, QueryFilter, QueryFilterGroup };

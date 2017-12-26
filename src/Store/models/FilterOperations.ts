@@ -5,7 +5,7 @@ export interface IFilterOperation {
     acceptedInputType?: string;
     middleText?: string;
     trailingText?: string;
-    sepBefore?: boolean;
+    dividerBefore?: boolean;
 }
 
 const FilterOperations: IFilterOperation[] = [{
@@ -22,7 +22,7 @@ const FilterOperations: IFilterOperation[] = [{
     fieldType: 'array',
     name: 'is null',
     inputCount: 0,
-    sepBefore: true
+    dividerBefore: true
 }, {
     fieldType: 'bool',
     name: 'is true',
@@ -71,7 +71,7 @@ const FilterOperations: IFilterOperation[] = [{
     fieldType: 'date',
     name: 'is within the current month',
     inputCount: 0,
-    sepBefore: true
+    dividerBefore: true
 }, {
     fieldType: 'date',
     name: 'is within past',
@@ -88,7 +88,7 @@ const FilterOperations: IFilterOperation[] = [{
     fieldType: 'date',
     name: 'is null',
     inputCount: 0,
-    sepBefore: true
+    dividerBefore: true
 }, {
     fieldType: 'number',
     name: 'is equal to',
@@ -123,7 +123,7 @@ const FilterOperations: IFilterOperation[] = [{
     fieldType: 'number',
     name: 'is null',
     inputCount: 0,
-    sepBefore: true
+    dividerBefore: true
 }, {
     fieldType: 'string',
     name: 'is equal to',
@@ -169,7 +169,7 @@ const FilterOperations: IFilterOperation[] = [{
     name: 'is null',
     inputCount: 1,
     acceptedInputType: 'string',
-    sepBefore: true
+    dividerBefore: true
 }];
 
 export default FilterOperations;

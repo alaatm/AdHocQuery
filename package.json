@@ -27,6 +27,7 @@
     "mobx-react-devtools": "^4.2.15",
     "react-app-rewire-less": "^2.1.0",
     "react-app-rewired": "^1.4.0",
-    "ts-import-plugin": "^1.4.3"
+    "ts-import-plugin": "^1.4.3",
+    "typescript": "^2.6.2"
   }
 }

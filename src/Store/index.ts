@@ -1,17 +1,33 @@
 import { action, computed, observable /*, runInAction*/ } from 'mobx';
 import { ITableDescriptor } from '../interfaces';
-import { Field } from './models';
+import { Field, QueryFilterGroup } from './models';
 const treeData = require('../test-data/fields.json') as ITableDescriptor[];
 
 export default class Store {
     @observable allFields: ITableDescriptor[] = treeData;
     @observable selectedFields: Field[] = [];
+    @observable queryFilterGroups: QueryFilterGroup[] = [];
+
+    constructor() {
+        const defaultFiled = this.allFields[0].fields[0];
+        this.queryFilterGroups.push(new QueryFilterGroup(defaultFiled, this.queryFilterGroups, true));
+    }
 
     @computed
     get sortedFields() {
         return this.selectedFields.filter(
             p => p.sorting && p.sorting.length && p.sorting !== 'None'
         ).sort((a, b) => a.sortingIndex - b.sortingIndex);
+    }
+
+    @computed
+    get defaultQueryFilterGroup() {
+        return this.queryFilterGroups[0];
+    }
+
+    @computed
+    get topLevelQueryFilterGroups() {
+        return this.queryFilterGroups.slice(1);
     }
 
     @action
@@ -64,5 +80,18 @@ export default class Store {
 
         source.sortingIndex = targetIndex;
         target.sortingIndex = sourceIndex;
+    }
+
+    @action
+    public addQueryFilterGroup = () => {
+        const defaultFiled = this.allFields[0].fields[0];
+        this.queryFilterGroups.push(new QueryFilterGroup(defaultFiled, this.queryFilterGroups));
+    }
+
+    @action
+    public removeQueryFilterGroup(group: QueryFilterGroup) {
+        if (!group.isDefault) {
+            this.queryFilterGroups.splice(this.queryFilterGroups.indexOf(group), 1);
+        }
     }
 }

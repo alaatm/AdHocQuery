@@ -2,7 +2,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as mobx from 'mobx';
 import Layout from './Layout';
+
 import './index.css';
+import './fonts.css';
 
 mobx.useStrict(true);
 

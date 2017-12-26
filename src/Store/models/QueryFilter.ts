@@ -4,17 +4,17 @@ import * as FilterOperations from './FilterOperations';
 
 export class QueryFilter {
     @observable field: IFieldDescriptor;
-    @observable operation: string;
+    @observable operation: FilterOperations.IFilterOperation;
     @observable operationList: FilterOperations.IFilterOperation[];
-    @observable value?: Date | number | string | string[];
-    @observable value1?: Date;
-    @observable value2?: Date;
+    @observable value?: number | string | string[];
+    @observable value1?: string;
+    @observable value2?: string;
     @observable enabled: boolean;
 
-    constructor(field: IFieldDescriptor, value?: Date | number | string | string[], value1?: Date, value2?: Date) {
+    constructor(field: IFieldDescriptor, value?: number | string | string[], value1?: string, value2?: string) {
         this.field = field;
         this.operationList = FilterOperations.default.filter(p => p.fieldType === field.type);
-        this.operation = this.operationList[0].name;
+        this.operation = this.operationList[0];
         this.enabled = true;
 
         if (value) {
@@ -31,7 +31,36 @@ export class QueryFilter {
     }
 
     @action
-    public toggle() {
+    public setField = (field: IFieldDescriptor) => {
+        this.field = field;
+        this.operationList = FilterOperations.default.filter(p => p.fieldType === field.type);
+        this.operation = this.operationList[0];
+    }
+
+    @action
+    public setValue = (value?: number | string | string[]) => {
+        this.value = value;
+    }
+
+    @action
+    public setValue1 = (value: string) => {
+        this.value1 = value;
+    }
+
+    @action
+    public setValue2 = (value: string) => {
+        this.value2 = value;
+    }
+
+    @action
+    public setOperation = (operation: FilterOperations.IFilterOperation) => {
+        if (this.operationList.indexOf(operation) >= 0) {
+            this.operation = operation;
+        }
+    }
+
+    @action
+    public toggle = () => {
         this.enabled = !this.enabled;
     }
 }

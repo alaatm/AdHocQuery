@@ -1,0 +1,63 @@
+.aq-qry-filter ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+.aq-qry-filter ul.root {
+    padding: 0;
+}
+
+.aq-qry-filter li table {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.aq-qry-filter li table:hover {
+    background: #e6f7ff;
+}
+
+.aq-qry-filter li table>tbody>tr>td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+}
+
+.aq-qry-filter li.group>table>tbody>tr>td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.aq-qry-filter li td.actions div {
+    opacity: .25;
+    min-width: 165px;
+    float: right;
+}
+
+.aq-qry-filter li.filter td.actions div {
+    text-align: right;
+}
+
+.aq-qry-filter li:hover td.actions div {
+    opacity: 1;
+}
+
+.aq-qry-filter td.actions a {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.aq-qry-filter td {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.aq-qry-filter td.last {
+    width: 100%;
+}
+
+.aq-qry-filter td.last-half {
+    width: 50%;
+}
