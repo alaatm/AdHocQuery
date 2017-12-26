@@ -30,6 +30,7 @@ export class SelectedFields extends React.Component<IProps, {}> {
 
         return (
             <Widget
+                icon="icon-list-ol"
                 title="Selected Fields"
                 actions={[{ name: 'Clear all', icon: 'close-circle', isEnabled: selectedColumns.length > 0 }]}
                 onActionClick={this.handleClearAllClick}

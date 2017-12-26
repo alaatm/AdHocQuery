@@ -39,7 +39,7 @@ export class Fields extends React.Component<IProps, {}> {
         const checkedKeys = this.props.store!.selectedFields.map(p => p.id);
 
         return (
-            <Widget icon="bars" title="Available Fields" className="aq-avail-cols">
+            <Widget icon="icon-th-list" title="Available Fields" className="aq-avail-cols">
                 <Tree
                     checkable={true}
                     onCheck={this.handleCheck}

@@ -26,6 +26,7 @@ export class SortedFields extends React.Component<IProps, {}> {
 
         return (
             <Widget
+                icon="icon-sort-amount-asc"
                 title="Sorted Fields"
                 actions={[{ name: 'Clear all', icon: 'close-circle', isEnabled: sortedFields.length > 0 }]}
                 onActionClick={this.handleClearAllClick}

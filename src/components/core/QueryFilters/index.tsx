@@ -19,7 +19,7 @@ export class QueryFilters extends React.Component<IProps> {
         const store = this.props.store!;
 
         return (
-            <Widget title="Query Filters" className="aq-qry-filter">
+            <Widget icon="icon-filter" title="Query Filters" className="aq-qry-filter">
                 <ul className="root">
                     {store.queryFilterGroups.map((g, i) => <GroupView key={i} group={g} />)}
                 </ul>

@@ -34,7 +34,7 @@ export class Widget extends React.Component<IProps, {}> {
         return (
             <div className="aq-widget">
                 <div className="aq-widget-header">
-                    {icon && <Icon type={icon} style={{ fontSize: 18 }} />}
+                    {icon && <i className={icon} />}
                     <span className="aq-widget-title">{title}</span>
                     {actions && actions.map((a, i) => (
                         <div key={i} className="aq-widget-action">
