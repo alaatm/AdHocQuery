@@ -11,6 +11,11 @@
     margin-right: 10px
 }
 
+.aq-widget a.disabled {
+    pointer-events: none;
+    color: #ccc;
+}
+
 .aq-widget-header {
     background: #f8f7f7;
     border-top: 6px solid #1777b1;
@@ -30,12 +35,7 @@
     float: right;
 }
 
-.aq-widget-action a.disabled {
-    pointer-events: none;
-    color: #ccc;
-}
-
 .aq-widget-body {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     overflow-y: auto;
 }
