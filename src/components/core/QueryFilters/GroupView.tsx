@@ -66,7 +66,6 @@ export class GroupView extends React.Component<IProps> {
                                 />
                             </a>
 
-
                             {!group.isDefault && (
                                 <a>
                                     <span

@@ -23,22 +23,27 @@ export class SelectedFields extends React.Component<IProps, {}> {
     }
 
     render() {
-        const selectedColumns = this.props.store!.selectedFields.slice();
+        const selectedFields = this.props.store!.selectedFields.slice();
+
+        // Issue where sorted fields aren't being updated.
+        const sortedFields = this.props.store!.sortedFields;
+        // tslint:disable-next-line:no-console
+        if (0) { console.log(sortedFields.length); }
 
         return (
             <Widget
                 icon="icon-list-ol"
                 title="Selected Fields"
-                actions={[{ name: 'Clear all', icon: 'close-circle', isEnabled: selectedColumns.length > 0 }]}
+                actions={[{ name: 'Clear all', icon: 'close-circle', isEnabled: selectedFields.length > 0 }]}
                 onActionClick={this.handleClearAllClick}
                 className="aq-sel-cols"
             >
                 <DndTable
                     columns={this.getColumns()}
                     rowKey={(record: Field) => record.id}
-                    dataSource={selectedColumns}
+                    dataSource={selectedFields}
                     size="middle"
-                    showHeader={selectedColumns.length ? true : false}
+                    showHeader={selectedFields.length ? true : false}
                     pagination={false}
                     onRowDrag={this.handleRowDrag}
                 />
@@ -50,7 +55,6 @@ export class SelectedFields extends React.Component<IProps, {}> {
         const sortedFields = this.props.store!.sortedFields;
 
         return (value: string) => {
-            this.forceUpdate();
             field.updateSorting(
                 value,
                 Math.max(...sortedFields.map(o => o.sortingIndex), 0)
@@ -105,7 +109,7 @@ export class SelectedFields extends React.Component<IProps, {}> {
 
                 const dateFieldMenu = (
                     <Menu onClick={this.handleFieldAggregateUpdateClick(item)}>
-                        <Menu.Item key="Count">None</Menu.Item>
+                        <Menu.Item key="None">None</Menu.Item>
                         <Menu.Divider />
                         <Menu.Item key="Count">Count</Menu.Item>
                         <Menu.Item key="Minimum">Minimum</Menu.Item>
@@ -115,7 +119,7 @@ export class SelectedFields extends React.Component<IProps, {}> {
 
                 const numericFieldMenu = (
                     <Menu onClick={this.handleFieldAggregateUpdateClick(item)}>
-                        <Menu.Item key="Count">None</Menu.Item>
+                        <Menu.Item key="None">None</Menu.Item>
                         <Menu.Divider />
                         <Menu.Item key="Sum">Sum</Menu.Item>
                         <Menu.Item key="Count">Count</Menu.Item>
